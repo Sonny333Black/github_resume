@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>
+        Github Resume
+    </h1>
+    {% if error is defined %}
+        <h2>
+            {{ error }}
+        </h2>
+    {% endif %}
+    <p>
+        {{ form_start(form, {'action': 'actionSearch', 'method': 'POST'}) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </p>
+    <h3>
+        {% if test is defined %}
+            {{ test }}
+        {% endif %}
+    </h3>
+{% endblock body %}

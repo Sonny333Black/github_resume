@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>
+        Ergebnis
+    </h1>
+    {% if error is defined %}
+        <h2>
+            {{ error }}
+        </h2>
+    {% endif %}
+    <h3>
+        <a href="https://github.com/{{ name }}">{{ name }}</a>
+    </h3>
+
+    {% if repo is defined %}
+        <ul>
+        {% for key,value in repo  %}
+            <li>
+                {{ key }}: {{ value|prozent(countAll) }}%
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock body %}
